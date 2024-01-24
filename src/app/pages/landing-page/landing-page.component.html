@@ -13,9 +13,12 @@
 </div>
 
 <app-layout>
-	<app-typography variant="h3">Offers</app-typography>
-
-	<div>Cards here!</div>
+	<app-typography variant="h3" weight="bold">Offers</app-typography>
+	<div class="cards">
+		<ng-container *ngFor="let data of cardData">
+			<app-card [city]="data.city" [price]="data.price" [priceCents]="data.priceCents"></app-card>
+		</ng-container>
+	</div>
 </app-layout>
 
 <div>
