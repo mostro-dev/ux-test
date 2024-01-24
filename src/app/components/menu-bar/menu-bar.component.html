@@ -1,9 +1,9 @@
-<div class="menu" [class.active]="!isActive">
+<div class="menu" [class.active]="isActive">
 	<app-layout>
 		<div class="menu__container">
 			<button
 				class="menu__container__btn menu__container__btn--open"
-				[class.open]="!isActive"
+				[class.open]="isActive"
 				(click)="toggleMenu()"
 			>
 				<div class="menu__container__btn--open__bar"></div>
