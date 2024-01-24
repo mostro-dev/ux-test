@@ -1,4 +1,27 @@
-.cards {
+.landing__hero {
+	background-position: 50% calc(100% - 95%);
+	background-size: 150rem;
+	background: url("./assets/hero-background.jpeg") no-repeat;
+	color: white;
+	margin-bottom: 4rem;
+
+	@media screen and (min-width: 1201px) {
+		background-position: 50% 25%;
+		background-size: 100%;
+	}
+}
+
+.landing__hero__content {
+	padding: 15rem 0;
+}
+
+.landing__hero__content__text {
+	display: grid;
+	gap: 0.5rem;
+	margin-bottom: 4rem;
+}
+
+.landing__cards {
 	display: grid;
 	gap: 2rem;
 	margin: 2rem 0 4rem;

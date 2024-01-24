@@ -1,20 +1,25 @@
 <app-menu-bar></app-menu-bar>
-<div>
+<div class="landing__hero">
 	<app-layout>
-		<app-typography variant="h2" weight="bold">Take a rest</app-typography>
+		<div class="landing__hero__content">
+			<div class="landing__hero__content__text">
+			<app-typography variant="h2" weight="bold">Take a rest</app-typography>
 
-		<app-typography
-			>Discover all the offers available at the best prices fot the whole country and the
-			world</app-typography
-		>
-
-		<app-button>Buy</app-button>
+			<app-typography
+				>Discover all the offers available at the best prices fot the whole country and the
+				world</app-typography
+			>
+		</div>
+			<app-button>
+				<app-typography variant="h5" weight="bold"> Buy </app-typography>
+			</app-button>
+		</div>
 	</app-layout>
 </div>
 
 <app-layout>
 	<app-typography variant="h3" weight="bold">Offers</app-typography>
-	<div class="cards">
+	<div class="landing__cards">
 		<ng-container *ngFor="let data of cardData">
 			<app-card [city]="data.city" [price]="data.price" [priceCents]="data.priceCents"></app-card>
 		</ng-container>
