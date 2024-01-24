@@ -1,0 +1,8 @@
+div {
+	margin: 0 1.6rem;
+	max-width: 120rem;
+
+	@media screen and (min-width: 1201px) {
+		margin: 0 auto;
+	}
+}
