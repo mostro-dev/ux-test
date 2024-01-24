@@ -1,0 +1,30 @@
+<div class="menu" [class.active]="!isActive">
+	<app-layout>
+		<div class="menu__container">
+			<button
+				class="menu__container__btn menu__container__btn--open"
+				[class.open]="!isActive"
+				(click)="toggleMenu()"
+			>
+				<div class="menu__container__btn--open__bar"></div>
+			</button>
+			<div>Logo</div>
+			<button class="menu__container__btn menu__container__btn--global">O</button>
+		</div>
+	</app-layout>
+	<div class="menu__content">
+		<app-layout>
+			<ul class="menu__content__list">
+				<li class="menu__content__list__item">
+					<app-typography variant="h4"> Check-in </app-typography>
+				</li>
+				<li class="menu__content__list__item">
+					<app-typography variant="h4"> Manage my booking</app-typography>
+				</li>
+				<li class="menu__content__list__item">
+					<app-typography variant="h4">Information</app-typography>
+				</li>
+			</ul>
+		</app-layout>
+	</div>
+</div>
