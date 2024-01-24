@@ -1,0 +1,35 @@
+<app-menu-bar></app-menu-bar>
+<div>
+	<app-layout>
+		<app-typography variant="h2" weight="bold">Take a rest</app-typography>
+
+		<app-typography
+			>Discover all the offers available at the best prices fot the whole country and the
+			world</app-typography
+		>
+
+		<app-button>Buy</app-button>
+	</app-layout>
+</div>
+
+<app-layout>
+	<app-typography variant="h3" weight="bold">Offers</app-typography>
+	<div class="cards">
+		<ng-container *ngFor="let data of cardData">
+			<app-card [city]="data.city" [price]="data.price" [priceCents]="data.priceCents"></app-card>
+		</ng-container>
+	</div>
+</app-layout>
+
+<div>
+	<app-layout>
+		<app-typography variant="h1" weight="bold">Our destinations</app-typography>
+		<app-typography variant="h1">Discover the world</app-typography>
+		<app-typography variant="h5">
+			Embark on an unforgettable adventure! Discover and enjoy our fascinating destinations. We are
+			waiting for you to explore the world together!</app-typography
+		>
+	</app-layout>
+</div>
+
+<app-footer />
