@@ -23,53 +23,26 @@
 			<ul class="menu__content__list">
 				<li
 					class="menu__content__list__item"
+					*ngFor="let menuItem of menuItems"
 					[ngClass]="{
-						selected: selectedMenuItem === 0 && selectedMenuItem !== null,
-						hide: selectedMenuItem !== 0 && selectedMenuItem !== null
+						selected: selectedMenuItem === menuItem.id && selectedMenuItem !== null,
+						hide: selectedMenuItem !== menuItem.id && selectedMenuItem !== null
 					}"
 				>
-					<app-typography variant="h4" [weight]="getTypographyWeight(0)" (click)="selectMenuItem(0)"
-						>Check-in
+					<app-typography
+						variant="h4"
+						[weight]="getTypographyWeight(menuItem.id)"
+						(click)="selectMenuItem(menuItem.id)"
+					>
+						{{ menuItem.label }}
 					</app-typography>
-					<ng-container *ngIf="selectedMenuItem === 0">
+					<ng-container *ngIf="selectedMenuItem === menuItem.id">
 						<ul class="menu__content__list__item__list">
-							<li><app-typography variant="h6">My Orders</app-typography></li>
-							<li><app-typography variant="h6">Check-in</app-typography></li>
-						</ul>
-					</ng-container>
-				</li>
-				<li
-					class="menu__content__list__item"
-					[ngClass]="{
-						selected: selectedMenuItem === 1 && selectedMenuItem !== null,
-						hide: selectedMenuItem !== 1 && selectedMenuItem !== null
-					}"
-				>
-					<app-typography variant="h4" [weight]="getTypographyWeight(1)" (click)="selectMenuItem(1)"
-						>Manage my booking</app-typography
-					>
-					<ng-container *ngIf="selectedMenuItem === 1">
-						<ul class="menu__content__list__item__list">
-							<li><app-typography variant="h6">My booking</app-typography></li>
-						</ul>
-					</ng-container>
-				</li>
-				<li
-					class="menu__content__list__item"
-					[ngClass]="{
-						selected: selectedMenuItem === 2 && selectedMenuItem !== null,
-						hide: selectedMenuItem !== 2 && selectedMenuItem !== null
-					}"
-				>
-					<app-typography variant="h4" [weight]="getTypographyWeight(2)" (click)="selectMenuItem(2)"
-						>Information</app-typography
-					>
-					<ng-container *ngIf="selectedMenuItem === 2">
-						<ul class="menu__content__list__item__list">
-							<li><app-typography variant="h6">Help Center</app-typography></li>
-							<li><app-typography variant="h6">Flight state</app-typography></li>
-							<li><app-typography variant="h6">Airplanes</app-typography></li>
-							<li><app-typography variant="h6">Routes</app-typography></li>
+							<li *ngFor="let subItem of menuItem.subItems">
+								<a href="{{ subItem.href }}">
+									<app-typography variant="h6">{{ subItem.label }}</app-typography>
+								</a>
+							</li>
 						</ul>
 					</ng-container>
 				</li>
