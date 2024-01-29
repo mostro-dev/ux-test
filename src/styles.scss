@@ -1,6 +1,16 @@
 @import "./app/styles/reset.scss";
 @import "./app/styles/fonts.scss";
+@import "./app/styles/variables";
 
 body {
 	font-family: "Roboto", sans-serif;
+}
+
+a {
+	transition: $default-transition;
+
+	&:hover {
+		color: $blue;
+		text-decoration: underline;
+	}
 }
