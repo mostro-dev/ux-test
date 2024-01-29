@@ -1,9 +1,11 @@
+@import "variables";
+
 .button {
 	border-radius: 10rem;
 	min-height: 4rem;
 	min-width: 15rem;
 	&.primary {
-		background-color: red;
-        color: white;
+		background-color: $red;
+		color: $white;
 	}
 }

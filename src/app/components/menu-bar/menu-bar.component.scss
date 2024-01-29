@@ -1,5 +1,7 @@
+@import "variables";
+
 .menu {
-	background-color: white;
+	background-color: $white;
 	left: 0;
 	position: fixed;
 	top: 0;
@@ -43,11 +45,11 @@
 	&::before,
 	&::after {
 		content: "";
-		background-color: black;
+		background-color: $black;
 		height: 0.2rem;
 		left: 0;
 		position: absolute;
-		transition: all 0.3s ease;
+		transition: $default-transition;
 		width: 2.4rem;
 	}
 
@@ -60,10 +62,10 @@
 	}
 
 	.menu__container__btn--open__bar {
-		background-color: black;
+		background-color: $black;
 		height: 0.2rem;
 		opacity: 1;
-		transition: all 0.3s ease;
+		transition: $default-transition;
 		width: 2.4rem;
 	}
 
@@ -86,30 +88,27 @@
 }
 
 .menu__content {
+	background-color: $white;
 	height: 100vh;
 	left: -100%;
 	position: absolute;
 	top: 5rem;
-	transition: all 0.3s ease;
+	transition: $default-transition;
 	width: 100%;
-	background-color: white;
-}
-
-.menu__content__list {
 }
 
 .menu__content__list__item {
-	position: relative;
 	padding: 2.53rem 0;
+	position: relative;
 	+ .menu__content__list__item {
 		&::before {
 			content: "";
-			position: absolute;
-			width: 100%;
+			background-color: $line-gray;
 			height: 0.1rem;
-			background-color: #b2b2c1;
-			top: 0;
 			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
 		}
 	}
 }
