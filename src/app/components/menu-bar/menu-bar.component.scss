@@ -6,12 +6,15 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: $header;
 
 	&.active {
 		.menu__content {
 			left: 0;
 		}
 	}
+
+
 }
 
 .menu__container {
@@ -21,6 +24,10 @@
 	justify-content: center;
 	position: relative;
 	width: 100%;
+
+	@media screen and (min-width: $md) {
+		height: 7rem;
+	}
 }
 
 .menu__container__btn {
