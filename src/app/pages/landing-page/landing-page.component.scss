@@ -23,6 +23,7 @@
 	margin-bottom: 4rem;
 }
 
+// Cards
 .landing__cards {
 	display: grid;
 	gap: 2rem;
@@ -35,4 +36,54 @@
 	@media screen and (min-width: $lg) {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
+}
+
+// Destinations
+.destinations {
+	align-items: flex-end;
+	background: linear-gradient(180deg, #181823 39.26%, #537fe7 100%);
+	border-radius: 1.6rem;
+	color: $white;
+	display: flex;
+	height: 72rem;
+	margin-bottom: 6.4rem;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+.destinations__image {
+	background: url("./assets/banner_destinations.jpeg") no-repeat;
+	background-position: 50% 30%;
+	background-size: 77rem;
+	border-radius: 50%;
+	height: 91rem;
+	left: 50%;
+	position: absolute;
+	top: 0;
+	transform: translate(-50%, -60%);
+	width: 76.8rem;
+	z-index: 2;
+
+	@media screen and (min-width: $md) {
+		background-position: 50% 50%;
+		background-size: 120rem;
+		border-radius: 0;
+		width: 100%;
+	}
+}
+
+.destinations__content {
+	padding: 6.4rem 1.6rem 10.2rem;
+}
+
+.destinations__content__title {
+	margin-bottom: 0, 3rem;
+	display: block;
+}
+
+.destinations__content__subtitle {
+	color: $ice-blue;
+	display: block;
+	margin-bottom: 2.4rem;
 }
