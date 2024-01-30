@@ -3,13 +3,13 @@
 	<app-layout>
 		<div class="landing__hero__content">
 			<div class="landing__hero__content__text">
-			<app-typography variant="h2" weight="bold">Take a rest</app-typography>
+				<app-typography variant="h2" weight="bold">Take a rest</app-typography>
 
-			<app-typography
-				>Discover all the offers available at the best prices fot the whole country and the
-				world</app-typography
-			>
-		</div>
+				<app-typography
+					>Discover all the offers available at the best prices fot the whole country and the
+					world</app-typography
+				>
+			</div>
 			<app-button>
 				<app-typography variant="h5" weight="bold"> Buy </app-typography>
 			</app-button>
@@ -21,20 +21,23 @@
 	<app-typography variant="h3" weight="bold">Offers</app-typography>
 	<div class="landing__cards">
 		<ng-container *ngFor="let data of cardData">
-			<app-card [city]="data.city" [price]="data.price" [priceCents]="data.priceCents"></app-card>
+			<app-card [city]="data.city" [price]="data.price" [priceCents]="data.priceCents" [img]="data.img"></app-card>
 		</ng-container>
 	</div>
 </app-layout>
 
-<div>
-	<app-layout>
-		<app-typography variant="h1" weight="bold">Our destinations</app-typography>
-		<app-typography variant="h1">Discover the world</app-typography>
-		<app-typography variant="h5">
-			Embark on an unforgettable adventure! Discover and enjoy our fascinating destinations. We are
-			waiting for you to explore the world together!</app-typography
-		>
-	</app-layout>
-</div>
+<app-layout>
+	<div class="destinations">
+		<div class="destinations__image"></div>
+		<div class="destinations__content">
+			<app-typography variant="h1" weight="bold" class="destinations__content__title">Our destinations</app-typography>
+			<app-typography variant="h1" class="destinations__content__subtitle">Discover the world</app-typography>
+			<app-typography variant="h5">
+				Embark on an unforgettable adventure! Discover and enjoy our fascinating destinations. We
+				are waiting for you to explore the world together!</app-typography
+			>
+		</div>
+	</div>
+</app-layout>
 
 <app-footer />

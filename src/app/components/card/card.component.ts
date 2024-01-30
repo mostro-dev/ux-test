@@ -12,4 +12,5 @@ export class CardComponent {
 	@Input() city: string = "";
 	@Input() price: string = "";
 	@Input() priceCents: string = "";
+  @Input() img: string = "";
 }

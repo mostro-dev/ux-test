@@ -25,8 +25,8 @@ import { CommonModule } from "@angular/common";
 })
 export class LandingPageComponent {
 	cardData: Array<CityPromo> = [
-		{ city: "Chicago", price: "600", priceCents: "00" },
-		{ city: "Porto", price: "600", priceCents: "00" },
-		{ city: "Chicago", price: "600", priceCents: "00" },
+		{ city: "Chicago", price: "600", priceCents: "00", img: "chicago.jpeg" },
+		{ city: "Porto", price: "600", priceCents: "00", img: "chicago_2.jpeg" },
+		{ city: "Chicago", price: "600", priceCents: "00", img: "porto.jpeg" },
 	];
 }

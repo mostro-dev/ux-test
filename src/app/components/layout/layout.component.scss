@@ -1,8 +1,11 @@
+@import "variables";
+
 div {
 	margin: 0 1.6rem;
 	max-width: 120rem;
 
-	@media screen and (min-width: 1201px) {
+	@media screen and (min-width: $lg) {
 		margin: 0 auto;
+		padding: 0 16px;
 	}
 }
