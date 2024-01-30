@@ -1,4 +1,7 @@
 <div class="card">
+	<div class="card__bg">
+		<img class="card__bg__img" [src]="'assets/imgs/cities/' + img" alt="{{ city }}" />
+	</div>
 	<div class="card__info">
 		<app-typography variant="h3">{{ city }}</app-typography>
 		<div class="card__info__price">

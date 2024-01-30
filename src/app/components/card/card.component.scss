@@ -1,24 +1,60 @@
 @import "variables";
 
+$layer-img: 1;
+$layer-overlay: 2;
+$layer-info: 3;
+
 .card {
-	background-color: black;
+	border-radius: 1.6rem;
 	display: flex;
 	height: 26rem;
-	width: 100%;
+	overflow: hidden;
+	position: relative;
 	text-align: right;
-	border-radius: 1.6rem;
+	width: 100%;
+}
+
+.card__bg {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: $layer-img;
+	&::before {
+		content: "";
+		background-color: $overlay-black;
+		bottom: 0;
+		clip-path: ellipse(50% 40% at 55% 75%);
+		height: 150%;
+		opacity: 0.96;
+		position: absolute;
+		right: 0;
+		transform-origin: 100% 100%;
+		transform: rotate(-20deg) translate(13rem, 5rem);;
+		width: 150%;
+		z-index: $layer-overlay;
+	}
+}
+
+.card__bg__img {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
 }
 
 .card__info {
-	width: 100%;
+	color: $white;
 	margin-top: auto;
 	padding: 2.3rem;
-	color: $white;
+	position: relative;
+	width: 100%;
+	z-index: $layer-info;
 }
 
 .card__info__price {
-	display: flex;
 	align-items: baseline;
+	display: flex;
 	gap: 0.2rem;
 	justify-content: right;
 	margin-top: 0.9rem;
