@@ -21,7 +21,7 @@
 	<app-typography variant="h3" weight="bold">Offers</app-typography>
 	<div class="landing__cards">
 		<ng-container *ngFor="let data of cardData">
-			<app-card [city]="data.city" [price]="data.price" [priceCents]="data.priceCents"></app-card>
+			<app-card [city]="data.city" [price]="data.price" [priceCents]="data.priceCents" [img]="data.img"></app-card>
 		</ng-container>
 	</div>
 </app-layout>
