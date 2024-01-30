@@ -8,21 +8,43 @@
 			>
 				<div class="menu__container__btn--open__bar"></div>
 			</button>
-			<div>Logo</div>
-			<button class="menu__container__btn menu__container__btn--global">O</button>
+			<div>
+				<a href="https://github.com/mostro-dev/ux-test" target="_blank">
+					<img src="../../assets/imgs/logo_main.svg" alt="Airline to the people" />
+				</a>
+			</div>
+			<button class="menu__container__btn menu__container__btn--global">
+				<img src="../../assets/imgs/menu-bar/logo_language.svg" alt="Language" />
+			</button>
 		</div>
 	</app-layout>
 	<div class="menu__content">
 		<app-layout>
 			<ul class="menu__content__list">
-				<li class="menu__content__list__item">
-					<app-typography variant="h4"> Check-in </app-typography>
-				</li>
-				<li class="menu__content__list__item">
-					<app-typography variant="h4"> Manage my booking</app-typography>
-				</li>
-				<li class="menu__content__list__item">
-					<app-typography variant="h4">Information</app-typography>
+				<li
+					class="menu__content__list__item"
+					*ngFor="let menuItem of menuItems"
+					[ngClass]="{
+						selected: selectedMenuItem === menuItem.id && selectedMenuItem !== null,
+						hide: selectedMenuItem !== menuItem.id && selectedMenuItem !== null
+					}"
+				>
+					<app-typography
+						variant="h4"
+						[weight]="getTypographyWeight(menuItem.id)"
+						(click)="selectMenuItem(menuItem.id)"
+					>
+						{{ menuItem.label }}
+					</app-typography>
+					<ng-container *ngIf="selectedMenuItem === menuItem.id">
+						<ul class="menu__content__list__item__list">
+							<li *ngFor="let subItem of menuItem.subItems">
+								<a href="{{ subItem.href }}">
+									<app-typography variant="h6">{{ subItem.label }}</app-typography>
+								</a>
+							</li>
+						</ul>
+					</ng-container>
 				</li>
 			</ul>
 		</app-layout>
