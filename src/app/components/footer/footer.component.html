@@ -1,1 +1,60 @@
-<p>footer works!</p>
+<div class="footer">
+	<div class="footer__main">
+		<app-layout>
+			<a class="footer__main__logo" href="https://github.com/mostro-dev/ux-test" target="_blank">
+				<img src="../../assets/imgs/logo_main.svg" alt="Airline to the people" />
+			</a>
+		</app-layout>
+
+		<div class="footer__main__social">
+			<app-layout>
+				<app-typography variant="h5" weight="bold" class="footer__main__social__title"
+					>Follow Us</app-typography
+				>
+				<ul class="footer__main__social__list">
+					<li *ngFor="let socialItem of footerData.social">
+						<a href="{{ socialItem.href }}">
+							<img [src]="'assets/' + socialItem.icon" alt="{{ socialItem.name }}"
+						/></a>
+					</li>
+				</ul>
+			</app-layout>
+		</div>
+
+		<app-layout>
+			<div class="footer__main__content">
+				<div
+					class="footer__main__content__list"
+					*ngFor="let listItem of footerData.lists; let last = last"
+					[ngClass]="{ 'last-child': last }"
+				>
+					<app-typography variant="h5" weight="bold" class="footer__main__content__list__title">{{
+						listItem.title
+					}}</app-typography>
+					<ul class="footer__main__content__list__list">
+						<li *ngFor="let listSubItem of listItem.data">
+							<a href="{{ listSubItem.href }}">
+								<app-typography variant="h6">{{ listSubItem.name }}</app-typography>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</app-layout>
+	</div>
+
+	<div class="footer__secondary">
+		<app-layout>
+		<ul class="footer__secondary__list">
+			<li class="footer__secondary__list__item" *ngFor="let siteMapItem of footerData.sitemap">
+				<a href="{{ siteMapItem.href }}">
+					<app-typography>{{ siteMapItem.name }}</app-typography>
+				</a>
+			</li>
+		</ul>
+		<a href="mailto:contact&#64;arilines.com">
+			<app-typography> contact&#64;arilines.com </app-typography></a
+		>
+	</app-layout>
+	</div>
+</div>

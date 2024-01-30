@@ -1,0 +1,100 @@
+@import "variables";
+
+.footer {
+	background-color: $footer-bg;
+}
+
+.footer__main {
+	padding: 3.6rem 0 0;
+}
+
+// Logo
+.footer__main__logo {
+	display: block;
+	height: 5.7rem;
+	margin-bottom: 6.4rem;
+	width: 18rem;
+}
+
+// Social
+.footer__main__social {
+	margin-bottom: 6.8rem;
+}
+
+.footer__main__social__title {
+	display: block;
+	margin-bottom: 1.5rem;
+}
+
+.footer__main__social__list {
+	display: flex;
+	gap: 1.6rem;
+}
+
+// Content
+.footer__main__content {
+	@media screen and (min-width: $sm) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 5rem;
+		margin-bottom: 4rem;
+	}
+}
+
+.footer__main__content__list {
+	margin-bottom: 3.6rem;
+	&.last-child {
+		margin-bottom: 4.9rem;
+	}
+
+	@media screen and (min-width: $sm) {
+		margin-bottom: 0;
+		&.last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.footer__main__content__list__title {
+	display: block;
+	margin-bottom: 2rem;
+}
+
+.footer__main__content__list__list {
+	display: grid;
+	gap: 1.3rem;
+}
+
+// Secondary
+.footer__secondary {
+	background-color: $footer-sitemap-bg;
+	color: $gray;
+	padding: 1rem 0;
+}
+
+.footer__secondary__list {
+	display: flex;
+	margin-bottom: 1rem;
+	:first-child {
+		padding-left: 0;
+	}
+	:last-child {
+		padding-right: 0;
+	}
+}
+
+.footer__secondary__list__item {
+	padding: 0 1.2rem;
+	position: relative;
+	+ .footer__secondary__list__item {
+		&::before {
+			content: "";
+			background-color: $gray;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 0.1rem;
+		}
+	}
+}
